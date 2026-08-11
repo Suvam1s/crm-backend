@@ -1,7 +1,7 @@
 package crm.example.crm.leads;
 
 public enum LeadStatus {
-    NEW,
+    New,
     CONTACTED,
     QUALIFIED,
     CONVERTED,
