@@ -35,6 +35,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
+			<!-- REST API / HTTP endpoints -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
 		  <!-- JPA / Entity / Repository / Database ORM -->
     	<dependency>
         	<groupId>org.springframework.boot</groupId>
