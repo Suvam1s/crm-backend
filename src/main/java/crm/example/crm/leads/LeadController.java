@@ -1,5 +1,5 @@
 package crm.example.crm.leads;
-
+import java.util.*;
 import java.time.LocalDateTime;
 
 import org.springframework.web.bind.annotation.*;
@@ -18,4 +18,12 @@ public class LeadController {
         return leadService.createLead(lead);
 
     }
+    @GetMapping
+    public List<Lead> getAllLeads() {
+    return leadService.getAllLeads();
+}
+@PutMapping("/{id}")
+public Lead updateLead(@PathVariable Long id, @RequestBody Lead lead) {
+    return leadService.updateLead(id, lead);
+}
 }
