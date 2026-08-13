@@ -1,8 +1,9 @@
 package crm.example.crm.leads;
-import java.util.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
 @Service
 public class LeadService {
     private final LeadsRepo leadsRepo;
@@ -29,5 +30,18 @@ public Lead updateLead(Long id, Lead lead) {
     existingLead.setStatus(lead.getStatus());
 
     return leadsRepo.save(existingLead);
+}
+    @GetMapping("/new")
+    public List<Lead> getNewLeads() {
+    return leadsRepo.findByStatus(LeadStatus.New);
+}
+
+@GetMapping("/contacted")
+public List<Lead> getContactedLeads() {
+    return leadsRepo.findByStatus(LeadStatus.CONTACTED);
+}
+@GetMapping("/qualified")
+public List<Lead> getQualifiedLeads() {
+    return leadsRepo.findByStatus(LeadStatus.QUALIFIED);
 }
 }
